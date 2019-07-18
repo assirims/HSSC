@@ -1,0 +1,77 @@
+<!-- BEGIN forumrow -->
+	<!-- IF (forumrow.S_IS_CAT and not forumrow.S_FIRST_ROW) or forumrow.S_NO_CAT  -->
+			</ul>
+	</div> <!-- end custom row -->
+<div class="custom-foot"></div>
+		</div>
+	<!-- ENDIF -->
+
+	<!-- IF forumrow.S_IS_CAT or forumrow.S_FIRST_ROW  or forumrow.S_NO_CAT  -->
+		<script type="text/javascript"> // <![CDATA[
+            ca_forum_register('{forumrow.FORUM_ID}');
+        // ]]>
+        </script>
+			<div class="inner">
+			<ul class="topiclist">
+				<li class="header">
+                <div class="custom-cat-header">
+					<dl class="icon">
+ 						<dt><!-- IF forumrow.S_IS_CAT --><div style="padding-right: 20px; margin-top: 8px;"><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE --><div style="padding-right: 20px; margin-top: 8px; font-weight: bold; font-family: Tahoma, Geneva, sans-serif; text-shadow: 2px 2px 2px #0b2534;">{L_FORUM}</div><!-- ENDIF --></div></dt>
+                   <a href="#" onclick="ca_expand_forum(this, {forumrow.FORUM_ID}); return false;" class="forum-expand" id="forumblock{forumrow.FORUM_ID}" <!-- IF not forumrow.S_IS_CAT -->style="display: none;"<!-- ENDIF -->></a>
+
+						</dl>
+                    
+                    </div> <!-- custom cat header -->
+				</li>
+			</ul>    <div class="custom-row" id="{forumrow.FORUM_ID}">
+			<ul class="topiclist forums">
+	<!-- ENDIF -->
+
+	<!-- IF not forumrow.S_IS_CAT -->
+
+		<li class="row">
+			<dl class="icon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC}); background-repeat: no-repeat;">
+				<dt title="{forumrow.FORUM_FOLDER_IMG_ALT}">
+                
+                <!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED --> <a class="feed-icon-forum" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}"><img src="{T_THEME_PATH}/images/feed.gif" alt="{L_FEED} - {forumrow.FORUM_NAME}" /></a> <!-- ENDIF -->
+
+					<!-- IF forumrow.FORUM_IMAGE --><span class="forum-image">{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
+					<a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a><br />
+					<span class="forum-descriptions">{forumrow.FORUM_DESC}</span>
+					<!-- IF forumrow.MODERATORS -->
+						<br /><strong>{forumrow.L_MODERATOR_STR}:</strong> {forumrow.MODERATORS}
+					<!-- ENDIF -->
+					<!-- IF forumrow.SUBFORUMS and forumrow.S_LIST_SUBFORUMS --><br /><strong>{forumrow.L_SUBFORUM_STR}</strong> {forumrow.SUBFORUMS}<!-- ENDIF -->
+				</dt>
+				<!-- IF forumrow.CLICKS -->
+					<dd class="redirect"><span>{L_REDIRECTS}: {forumrow.CLICKS}</span></dd>
+				<!-- ELSEIF not forumrow.S_IS_LINK -->
+                <dd class="lastpost"><span>
+                    	<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG}</a><!-- ENDIF -->
+						 <!-- IF forumrow.LAST_POST_TIME -->{L_LAST_POST} {L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}
+						<!-- IF not S_IS_BOT --><a href="{forumrow.U_LAST_POST}">{LAST_POST_IMG}</a> <!-- ENDIF --><br />{forumrow.LAST_POST_TIME}<!-- ELSE -->{L_NO_POSTS}<br />&nbsp;<!-- ENDIF --></span>
+					</dd>
+					<dd class="topics">{forumrow.TOPICS}<br /><span>{L_TOPICS}</span><dfn>{L_TOPICS}</dfn></dd>
+					<dd class="posts">{forumrow.POSTS}<br /><span>{L_POSTS}</span><dfn>{L_POSTS}</dfn></dd>
+				<!-- ENDIF -->
+			</dl>
+		</li>
+
+	<!-- ENDIF -->
+
+	<!-- IF forumrow.S_LAST_ROW -->
+			</ul>
+         <!-- end custom row -->
+			<div class="custom-foot"></div>
+
+	<!-- ENDIF -->
+
+<!-- BEGINELSE -->
+	<div class="panel">
+		<div class="inner"><span class="corners-top"><span></span></span>
+		<strong>{L_NO_FORUMS}</strong>
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+<!-- END forumrow -->
+
+</div>

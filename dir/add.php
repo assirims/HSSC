@@ -1,0 +1,288 @@
+<?php
+session_start();
+
+include("config.php");
+include("function.php");
+include("templates/template.php");
+
+$action = $_GET['action'];
+if(!isset($action)) $action = "add";
+
+IF ($action=="add"){
+
+tpl_header("«÷› ··œ·Ì·");
+
+if($showblocks == 1){
+echo "<div class='indexw'>
+<table border='0' width='100%' id='AutoNumber10'>
+<tr>
+<td width='10%' valign='top'>";
+right_blocks();
+echo "</td><td width='80%' valign='top'>";
+if($allow_add == 1){
+addsite();
+}else{
+echo "<div class='divmessage'>‰√”› ·≈“⁄«Ãﬂ √ŒÌ «·ﬂ—Ì„ ..  „ ≈Ìﬁ«› Â–Â «·Œ«’Ì… „‰ «·≈œ«—…</div>";
+}
+echo "</td><td width='10%' valign='top'>";
+left_blocks();
+echo "</td></tr></table></div>";
+
+}else{
+
+if($allow_add == 1){
+echo "<div class='indexw'>";
+addsite();
+echo "</div>";
+}else{
+echo "<div class='divmessage'>‰√”› ·≈“⁄«Ãﬂ √ŒÌ «·ﬂ—Ì„ ..  „ ≈Ìﬁ«› Â–Â «·Œ«’Ì… „‰ «·≈œ«—…</div>";
+}
+}
+
+tpl_footer();
+
+}ELSEIF ($action=="insert"){
+if($_POST['agree'] == 1){
+tpl_header("—”«·… ≈œ«—Ì…");
+
+if($showblocks == 1){
+echo "<div class='indexw'>
+<table border='0' width='100%' id='AutoNumber10'>
+<tr>
+<td width='10%' valign='top'>";
+right_blocks();
+echo "</td><td width='80%' valign='top'>";
+$ssss = "<div class='divmessage'>⁄–—« √ŒÌ «·ﬂ—Ì„ ·„  ﬁ„ »«·„Ê«›ﬁÂ ⁄·Ï ‘—Êÿ ≈÷«›… «·„Êﬁ⁄ . <a href='javascript:history.back(1)'>⁄Êœ… ··Œ·›</a></div>";
+echo "<fieldset>
+<legend><span class='aa'>—”«·… ≈œ«—Ì…</span></legend>
+<div align='center'>$ssss</div>
+</fieldset>";
+echo "</td><td width='10%' valign='top'>";
+left_blocks();
+echo "</td></tr></table></div>";
+
+}else{
+
+$ssss = "<div class='divmessage'>⁄–—« √ŒÌ «·ﬂ—Ì„ ·„  ﬁ„ »«·„Ê«›ﬁÂ ⁄·Ï ‘—Êÿ ≈÷«›… «·„Êﬁ⁄ . <a href='javascript:history.back(1)'>⁄Êœ… ··Œ·›</a></div>";
+
+echo "<div class='indexw'><fieldset>
+<legend><span class='aa'>—”«·… ≈œ«—Ì…</span></legend>
+<div align='center'>$ssss</div>
+</fieldset></div>";
+
+}
+
+tpl_footer();
+exit;
+}
+
+/*
+if($_POST['code'] != $_SESSION['captchacode'] OR $_SESSION["captchacode"]=='')
+{
+tpl_header("—”«·… ≈œ«—ÌÂ");
+
+if($showblocks == 1){
+echo "<div class='indexw'>
+<table border='0' width='100%' id='AutoNumber10'>
+<tr>
+<td width='10%' valign='top'>";
+right_blocks();
+echo "</td><td width='80%' valign='top'>";
+$ssss = "<div class='divmessage'>Œÿ√ ›Ì ﬂÊœ «· Õﬁﬁ° „‰ ›÷·ﬂ √⁄œ «·„Õ«Ê·… „—… √Œ—Ï . <a href='javascript:history.back(1)'>⁄Êœ… ··Œ·›</a></div>";
+//tpl_table("—”«·… ≈œ«—ÌÂ",$ssss);
+echo "<fieldset>
+<legend><span class='aa'>—”«·… ≈œ«—Ì…</span></legend>
+<div align='center'>$ssss</div>
+</fieldset>";
+echo "</td><td width='10%' valign='top'>";
+left_blocks();
+echo "</td></tr></table></div>";
+
+}else{
+
+$ssss = "<div class='divmessage'>Œÿ√ ›Ì ﬂÊœ «· Õﬁﬁ° „‰ ›÷·ﬂ √⁄œ «·„Õ«Ê·… „—… √Œ—Ï . <a href='javascript:history.back(1)'>⁄Êœ… ··Œ·›</a></div>";
+
+echo "<div class='indexw'><fieldset>
+<legend><span class='aa'>—”«·… ≈œ«—Ì…</span></legend>
+<div align='center'>$ssss</div>
+</fieldset></div>";
+
+}
+
+tpl_footer();
+exit;
+}
+*/
+
+$title = addslashes($_POST['title']);
+$title = trim($title);
+
+$url = addslashes($_POST['url']);
+$url = trim($url);
+
+if(substr($url,0,0) == ""){
+$u = "·«ÌÊÃœ ⁄‰Ê«‰";
+}else{
+$u = $url;
+}
+
+$country = addslashes($_POST['country']);
+$yourname = addslashes($_POST['yourname']);
+$yourmail = addslashes($_POST['yourmail']);
+
+$cat = $_POST['cat'];
+$lang = $_POST['lang'];
+
+$metadescription = addslashes($_POST['metadescription']);
+$metadescription = trim($metadescription);
+
+$metakeywords = addslashes($_POST['metakeywords']);
+$metakeywords = trim($metakeywords);
+
+if($metadescription == ""){
+$xx1 = $title;
+}else{
+$xx1 = $metadescription;
+}
+
+if($metakeywords == ""){
+$xx2 = $title;
+}else{
+$xx2 = $metakeywords;
+}
+
+if (empty($title)){
+$xx = "- ·„  ﬂ » ≈”„ «·„Êﬁ⁄ . <a href='javascript:history.back(1)'>⁄Êœ… ··Œ·›</a>";
+}else{
+
+$query =  mysql_query ("INSERT INTO dlil_site (title,url,metadescription,metakeywords,active,country,yourname,yourmail,lang,cat,date) VALUES ('$title','$u','$xx1','$xx2','0','$country','$yourname','$yourmail','$lang','$cat','".time()."')") or die ("≈” ⁄·«„ Œ«ÿÌ¡");
+$xx = "-  „  «·≈÷«›… »‰Ã«Ã ... ”Ì „ «· ›⁄Ì· ﬁ—Ì»« «‰ ‘«¡ «··Â . . . . . Ã«—Ì «· ÊÃÌÂ «· ·ﬁ«∆Ì";
+
+if($htmlorphp==1){
+$z = "index.html";
+}else{
+$z = "index.php";
+}
+
+$xx .= "<META HTTP-EQUIV='refresh' CONTENT='1; URL=$z'>";
+
+
+}
+
+tpl_header("«÷› ··œ·Ì·");
+
+if($showblocks == 1){
+echo "<div class='indexw'>
+<table border='0' width='100%' id='AutoNumber10'>
+<tr>
+<td width='10%' valign='top'>";
+right_blocks();
+echo "</td><td width='80%' valign='top'>";
+echo "<fieldset>
+<legend><span class='aa'>—”«·… ≈œ«—Ì…</span></legend>
+$xx
+</fieldset>";
+echo "</td><td width='10%' valign='top'>";
+left_blocks();
+echo "</td></tr></table></div>";
+}else{
+echo "<div class='indexw'><fieldset>
+<legend><span class='aa'>—”«·… ≈œ«—Ì…</span></legend>
+$xx
+</fieldset></div>";
+}
+tpl_footer();
+
+
+}ELSEIF ($action=="addcomments"){
+if($_POST['code'] != $_SESSION['captchacode'] OR $_SESSION["captchacode"]=='')
+{
+tpl_header("—”«·… ≈œ«—Ì…");
+
+if($showblocks == 1){
+echo "<div class='indexw'>
+<table border='0' width='100%' id='AutoNumber10'>
+<tr>
+<td width='10%' valign='top'>";
+right_blocks();
+echo "</td><td width='80%' valign='top'>";
+$ssss = "<div align='center'>Œÿ√ ›Ì ﬂÊœ «· Õﬁﬁ° „‰ ›÷·ﬂ √⁄œ «·„Õ«Ê·… „—… √Œ—Ï . <a href='javascript:history.back(1)'>⁄Êœ… ··Œ·›</a></div>";
+echo "<fieldset>
+<legend><span class='aa'>—”«·… ≈œ«—Ì…</span></legend>
+$ssss
+</fieldset>";
+echo "</td><td width='10%' valign='top'>";
+left_blocks();
+echo "</td></tr></table></div>";
+}else{
+$ssss = "<div align='center'>Œÿ√ ›Ì ﬂÊœ «· Õﬁﬁ° „‰ ›÷·ﬂ √⁄œ «·„Õ«Ê·… „—… √Œ—Ï . <a href='javascript:history.back(1)'>⁄Êœ… ··Œ·›</a></div>";
+echo "<div class='indexw'><fieldset>
+<legend><span class='aa'>—”«·… ≈œ«—Ì…</span></legend>
+<div align='center'>$ssss</div>
+</fieldset></div>";
+}
+
+tpl_footer();
+exit;
+}
+
+$name = addslashes($_POST['name']);
+$name = trim($name);
+
+$emails = addslashes($_POST['emails']);
+$emails = trim($emails);
+
+$text = addslashes($_POST['text']);
+$text = trim($text);
+
+$articleid = intval($_POST['articleid']);
+
+if (empty($name) AND empty($text)){
+$xx = "- ·„  ﬂ » ≈”„ﬂ .<br>- ·„  ﬂ » «· ⁄·Ìﬁ .<br>- <a href='javascript:history.back(1)'>⁄Êœ… ··Œ·›</a>";
+}elseif (empty($name)){
+$xx = "- ·„  ﬂ » ≈”„ﬂ . <a href='javascript:history.back(1)'>⁄Êœ… ··Œ·›</a>";
+}elseif (empty($text)){
+$xx = "- ·„  ﬂ » «· ⁄·Ìﬁ . <a href='javascript:history.back(1)'>⁄Êœ… ··Œ·›</a>";
+}elseif ($emails != "" AND !eregi('^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.([a-zA-z]{2,4})$',$emails)){
+$xx = "- ·„  ﬂ » «·»—Ìœ «·≈·ﬂ —Ê‰Ì »«·÷ﬂ· «·’ÕÌÕ xxxxx@domin.com . <a href='javascript:history.back(1)'>⁄Êœ… ··Œ·›</a>";
+
+}else{
+
+$query =  mysql_query ("INSERT INTO dlil_comment (name,emails,text,active,articleid,date) VALUES ('$name','$emails','$text','$activecomments','$articleid','".time()."')") or die ("≈” ⁄·«„ Œ«ÿÌ¡");
+$xx = "-  ≈÷«›… «· ⁄·Ìﬁ »‰Ã«Õ . . . ”Ì „  ÊÃÌÂﬂ  ·ﬁ«∆Ì« ·’›Õ… «·„ﬁ«· «·”«»ﬁ . . Ê‘ﬂ—« · Ê«’·ﬂ „⁄‰«";
+
+if($htmlorphp==1){
+$z = "article-".$articleid.".html";
+}else{
+$z = "article.php?id=".$articleid."";
+}
+
+$xx .= "<META HTTP-EQUIV='refresh' CONTENT='1; URL=$z'>";
+}
+
+tpl_header("≈÷«›…  ⁄·Ìﬁ");
+
+if($showblocks == 1){
+echo "<div class='indexw'>
+<table border='0' width='100%' id='AutoNumber10'>
+<tr>
+<td width='10%' valign='top'>";
+right_blocks();
+echo "</td><td width='80%' valign='top'>";
+echo "<fieldset>
+<legend><span class='aa'>—”«·… ≈œ«—Ì…</span></legend>
+$xx
+</fieldset>";
+echo "</td><td width='10%' valign='top'>";
+left_blocks();
+echo "</td></tr></table></div>";
+}else{
+echo "<div class='indexw'><fieldset>
+<legend><span class='aa'>—”«·… ≈œ«—Ì…</span></legend>
+$xx
+</fieldset></div>";
+}
+
+tpl_footer();
+}
+?>

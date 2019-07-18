@@ -1,0 +1,264 @@
+/* top elements */
+* { margin: 0;	padding: 0; }
+
+body {
+	margin: 0; padding: 0;
+	font: 12px Tahoma, Arial, Helvetica, sans-serif;
+	color: #333; 
+	background: #FFF url(bg.jpg) repeat-x;	
+}
+
+#wrap {
+	margin: 0 auto; 
+	width: 880px;
+}
+
+#wrap .menu{
+	margin: 0; 
+	padding: 0; 
+	width: 180px;
+	float:right;
+}
+
+#wrap .content{
+	margin: 0;
+	padding: 0;
+	width: 695px;
+	float:left;
+}
+
+/* links */
+a {
+	color: #003366;
+	text-decoration: none;
+}
+a:hover {
+	color: #CC0001; 
+}
+
+.aa {
+font: normal 11px tahoma, sans-serif;
+color: #008000;
+text-decoration: none;
+}
+
+.bar {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  display: block;
+  overflow: auto;  
+  background: #FAFAFA;
+  border: 1px solid #f2f2f2;  
+  border-top: 4px solid #CC0000;
+  border-bottom: 4px solid #CC0000;
+  clear:both;
+}
+
+select,input,textarea {
+	padding: 2px;
+	border:1px solid #999999;
+	font: normal 11px tahoma, sans-serif;
+	color:#777;
+	background: #fff;
+}
+
+input.buttonx { 
+	margin: 0; 
+	font: 12px tahoma, Sans-serif; 
+	border: 1px solid #CCC; 
+	padding: 1px; 
+	background: #FFF;
+	color: #CC0000;
+}
+
+.xtable      { 
+    margin: 0 0 10px 0; 
+	padding: 1px; 
+	font: normal 12px tahoma, Sans-Serif;
+	color: #000;
+	background: #FAFAFA;
+    border: 1px solid #999999; 
+}
+
+.xtr    { 
+	border: 1px solid #999999;
+	margin: 0;
+	padding: 2px;
+	background: #f2f2f2;
+ }
+.xtd         { 
+	border: 1px solid #999999;
+	margin: 0;	
+	padding: 2px;
+	background: #FFF;
+	}
+.xtt         { 
+    border: 1px solid #999999;	
+	font: bold 15px Times New Roman,Arial;
+    color: white;
+    background: black url(images/titlebar.png) repeat-x center right;
+    margin-bottom: 10px; /*bottom spacing between header and rest of content*/
+    padding: 4px 10px 4px 0; /*header text is indented 10px*/
+    text-align:center;
+}
+
+.xtx         { 
+    border: 1px solid #999999;	
+	font: bold 15px Times New Roman,Arial;
+    color: white;
+    background: black url(images/titlebar-active.png) repeat-x center right;
+    margin-bottom: 10px; /*bottom spacing between header and rest of content*/
+    padding: 4px 10px 4px 0; /*header text is indented 10px*/
+    text-align:center;
+}
+
+hr           { border: 1px dotted #B5A35B;}
+
+form.reg {
+    width:450px;
+	padding: 0; margin: 0 auto;
+	border: none;
+	background-color: transparent; 
+}
+
+
+.arrowlistmenu{
+width: 180px; /*width of accordion menu*/
+}
+
+.arrowlistmenu .menuheader{ /*CSS class for menu headers in general (expanding or not!)*/
+font: bold 15px Times New Roman,Arial;
+color: white;
+background: black url(images/titlebar.png) repeat-x center right;
+margin-bottom: 10px; /*bottom spacing between header and rest of content*/
+text-transform: uppercase;
+padding: 4px 10px 4px 0; /*header text is indented 10px*/
+cursor: hand;
+cursor: pointer;
+}
+
+.arrowlistmenu .openheader{ /*CSS class to apply to expandable header when it's expanded*/
+background-image: url(images/titlebar-active.png);
+}
+
+.arrowlistmenu ul{ /*CSS for UL of each sub menu*/
+list-style-type: none;
+margin: 0;
+padding: 0;
+margin-bottom: 8px; /*bottom spacing between each UL and rest of content*/
+}
+
+.arrowlistmenu ul li{
+padding-bottom: 2px; /*bottom spacing between menu items*/
+}
+
+.arrowlistmenu ul li a{
+color: #A70303;
+background: url(images/arrowbullet.png) no-repeat center right; /*custom bullet list image*/
+display: block;
+padding: 2px 0;
+padding-right: 19px; /*link text is indented 19px*/
+text-decoration: none;
+font-weight: bold;
+border-bottom: 1px solid #dadada;
+font-size: 90%;
+}
+
+.arrowlistmenu ul li a:visited{
+color: #A70303;
+}
+
+.arrowlistmenu ul li a:hover{ /*hover state CSS*/
+color: #A70303;
+background-color: #F3F3F3;
+}
+
+.addsubmit {
+font-size: 11px;
+font-family: tahoma, Arial, Helvetica, sans-serif;
+font-weight: normal;
+padding:5px;
+border-bottom:1px solid #5D5B46; 
+border-right:1px solid #5D5B46; 
+padding:1px;
+background: #fff; 
+color:#5D5B46; 
+}
+
+.button {
+border: 1px solid #ccc;
+margin: 1px;
+padding: 2px;
+}
+
+.button:hover {
+filter:progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+-moz-opacity: 0.6;
+}
+
+
+#logindiv{
+	width:264px;
+	margin:0 auto;
+}
+#logindiv h2.mem{
+	width:214px;
+	height:57px;
+	background:url(images/member_login.gif) 0 0 no-repeat;
+	padding:0 50px 0 0;
+	font:bold 20px/57px Arial, Helvetica, sans-serif;
+	color:#7BCA0A;
+	background-color:inherit;
+}
+#logindiv form{
+	background:url(images/memberlogin_bg.gif) 0 0 repeat-y;
+	width:228px;
+	padding:0 18px;
+	margin:0;
+}
+#logindiv form input.txtBox{
+	width:206px;
+	height:19px;
+	border-left:#808080 solid 1px;
+	border-top:#808080 solid 1px;
+	border-right:#D4D0C8 solid 1px;
+	border-bottom:#D4D0C8 solid 1px;
+	/*font:normal 11px/19px Arial, Helvetica, sans-serif;*/
+	color:#000;
+	background-color:#fff;
+	margin:0 0 17px 0;
+	padding:0 10px 0 0;
+}
+/*
+#logindiv form a{
+	font:bold 12px/19px Arial, Helvetica, sans-serif;
+	color:#FF6600;
+	background-color:#131313;
+	text-decoration:underline;
+	float:right;
+	background:url(images/register_here_bg.gif) 0 5px no-repeat;
+	padding:0 0 0 14px;
+	width:79px;
+}
+#logindiv form a:hover{
+	text-decoration:none;
+}
+*/
+#logindiv form input.login{
+	background:url(images/btn_login.gif) 0 0 no-repeat;
+	width:53px;
+	height:13px;
+	border:none;
+	cursor:pointer;
+	float:left;
+}
+#logindiv p.bottom2{
+	background:url(images/memberlogin_bot.gif) 0 0 no-repeat;
+	width:264px;
+	height:25px;
+	margin:0 0 5px 0;
+}
+
+/*------------------------------------------------login panel--------------------*/
+

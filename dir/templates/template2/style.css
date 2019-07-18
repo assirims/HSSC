@@ -1,0 +1,537 @@
+* { margin: 0; padding: 0; outline: 0; }
+
+
+html, body {
+	color: #11384f;
+	background-color: #071924;
+	background-image: url("bodybg.png");
+	background-repeat: repeat-y;
+	background-position: 50% 50%;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+/* links */
+a {
+	text-decoration: none;
+	color: #FB9233; 
+}
+a:hover {
+	text-decoration: underline;
+	background: inherit;
+	font-weight: bold;
+}
+
+/* headers */
+h1, h2, h3 { font-family: 'Tahoma';  }
+h1 {	
+	font-weight: normal;
+	text-shadow: -1px 1px 3px #000;
+	color: #FFFFFF;
+}
+h2 {
+	color: #88ac0b;
+	font-weight: normal;
+}
+h3 { 
+	color: #666666;
+}
+
+/* images */
+img {
+	background: #fff;
+   border: 1px solid #E5E5E5;
+	padding: 5px;
+}
+
+h1, h2, h3, p {
+	margin: 10px 15px;
+	padding: 0;
+}
+
+code {
+  margin: 5px 0;
+  padding: 15px;
+  text-align: left;
+  display: block;
+  overflow: auto;  
+  font: 500 1em/1.5em 'Lucida Console', 'courier new', monospace ;
+  /* white-space: pre; */
+  border: 1px solid #E5F0FB;  
+  background: #F4F8FD;
+}
+
+blockquote {
+  margin: 10px 15px;
+  padding: 0 0 0 25px;  
+  font: bold 1.3em/1.5em "Tahoma"; 
+  color: #2361BA;
+  border: 1px solid #E5F0FB;   
+  background: #F4F8FD url(quote.jpg) no-repeat 8px 6px;
+}
+
+fieldset {
+	margin: 2px;	
+	padding:2px;
+	border: 1px solid #A9D4EF;
+}
+legend {
+    margin: 2px;	
+	padding:2px;
+	border: 1px solid #A9D4EF;
+}
+
+label {
+	display:block;
+	font-weight:bold;
+	margin: 7px 0;
+}
+
+input.button { 
+	font: bold 12px Tahoma; 
+	height: 28px;
+	margin: 0;
+	padding: 2px 3px; 
+	color: #fff;
+	background: #306bc1 url(button-bg.jpg) repeat-x 0 0; 
+	border: 1px solid #306bc1;
+}
+
+/* search form */
+.searchform {
+	background-color: transparent;
+	border: none;	
+	margin: 0; 
+	padding: 5px 200px 0 0;	
+	width: 300px;	
+}
+.searchform p { margin: 0; padding: 0; }
+.searchform input.textbox { 
+	width: 110px;
+	color: #777; 
+	height: 20px;
+	padding: 2px;	
+	border: 1px solid #D2E8F7; 
+	vertical-align: top;
+}
+.searchform input.button { 
+    font: 12px tahoma; 
+	width: 50px;
+	height: 26px;
+	padding: 0px 5px;
+	vertical-align: top;
+}
+
+/********************************************
+   LAYOUT
+********************************************/ 
+#wrap {
+	width: 930px;
+	margin: 0 auto;
+	text-align: right;
+}
+#content-wrap {
+	clear: both;
+	width: 930px;	
+	margin: 0 auto;
+	padding: 0; 
+}
+#header {
+	position: relative;
+	height: 112px;
+	width: 930px;
+	background: url(header.jpg) no-repeat center;
+	padding: 0;	
+	color: #FFFFFF;	
+}
+#header h1#logo-text a {
+	position: absolute;
+	margin: 0; padding: 0;
+	font: bolder 33px Tahoma;
+	letter-spacing: -3px;
+	color: #FFFFFF;
+	text-transform: none;
+	text-decoration: none;
+	background: transparent;
+	
+	/* change the values of top and left to adjust the position of the logo*/
+	top: 18px; right: 35px;	
+}
+#header p#slogan {
+	position: absolute;
+	margin: 0; padding: 0;
+	font: bold 13px Tahoma;
+	text-shadow: 0px 0px 3px #000;
+	text-transform: none;
+	color: #FFFFFF;
+	
+	/* change the values of top and left to adjust the position of the slogan*/
+	top: 80px; right: 50px;		
+}
+
+/* header links */
+#header #header-links {
+	position: absolute;
+	color: #FFFFFF;
+	font: bold 12px Tahoma;
+	text-shadow: 0px 0px 3px #000;
+	top: 20px; left: 20px;	
+}
+#header #header-links a {	
+	color: #FFFFFF;
+	text-decoration: none;	
+}
+#header #header-links a:hover {
+	color: #D4FF55;	
+}
+
+/* navigation */
+#menu {
+	clear: both;	
+	margin: 0 auto; 
+	padding: 0;
+	background: url(menu.jpg) no-repeat;	
+	font: bold 16px/40px "Tahoma";
+	height: 40px;
+	width: 930px;	
+}
+#menu ul {
+	/* float: right;*/
+	list-style: none;
+	margin:0; 
+	padding: 0 20px 0 0;
+}
+#menu ul li {
+	display: inline;
+}
+#menu ul li a {
+	display: block;
+	float: right;
+	padding: 0 12px;
+	color: #fff;	
+	text-decoration: none;
+	/* background: url(sep.jpg) no-repeat 100% 100%; */
+}
+#menu ul li a:hover {
+	color: #D4FF55;	
+}
+#menu ul li#current a {	
+	color: #D4FF55;
+}
+
+/* Main Column */
+#main {
+	float: right;
+	width: 555px;
+	margin: 0; padding: 20px 0 0 0; 
+	display: inline;
+	background: url(box.jpg) no-repeat; 	
+}
+#main h2 {
+	font: normal 'Tahoma';
+	padding: 0; 	
+	margin-bottom: 0;		
+	color: #2666c3;
+}
+#main h2 a {
+	color: #2666c3;
+	text-decoration: none;	
+}
+
+
+/* Sidebar */	
+.sidebar {
+	float: right;
+	width: 150px;
+	padding: 0; margin: 10px 0 0 0;	
+	color: #777;	
+	font: Tahoma;
+	font-size: 15px;
+	font-weight: bold;
+	
+}	
+.sidebar h2 {
+	margin: 15px 5px 10px 5px;
+	font: bold Tahoma;
+	color: #555;
+	font-weight: bold;
+	font-size: 13px;
+}
+.sidebar p {
+	margin-left: 5px;
+}
+
+.sidebar ul {
+    font: 11px Tahoma;
+	list-style: none;
+	text-align: right;
+	margin: 7px 10px 8px 0; padding: 0;
+	text-decoration: none;	
+	border-top: 1px solid #A9D4EF;	
+}
+.sidebar ul li {
+	list-style: none;
+	padding: 4px 0 4px 5px;
+	margin: 0 2px;	
+	color: #777;	
+	border-bottom: 1px solid #D2E8F7; 
+}
+
+.sidebar ul li a {
+	text-decoration: none;	
+	color: #1773BC;				
+	background: url(list.gif) top right no-repeat;
+	padding: 0 12px;
+}
+.sidebar ul li a:hover {	
+	color: #A80000;
+}
+
+/* Footer */	
+#footer {
+	color: #C6DDEE;
+	background: #caced1 url(footer.gif) no-repeat center top;
+	clear: both;
+	width: 930px;
+	height: 57px;
+	text-align: center;	
+	font-size: 90%;	
+}
+#footer p { 
+	padding: 10px 0;
+	margin: 0;
+}
+#footer a { 
+	color: #fff;
+	text-decoration: none; 
+}
+
+/* post footer */
+.post-footer {
+	background: #F4F8FD;
+	padding: 5px; margin: 20px 25px 0 25px;
+	border: 1px solid #E5F0FB; 
+	font-size: 95%;	
+}
+.post-footer .date {	padding-left: 0px; margin: 0 5px; }
+.post-footer .comments { padding-left: 0px; margin: 0 5px; }
+.post-footer .readmore { padding-left: 0px; margin: 0 5px; }
+
+.post-by { font-size: .95em;	margin-top: 0;	}
+
+/* display and additional classes */
+.clear { clear: both; }
+
+
+.boxitem {
+width: 100%;
+height: 110px;
+float: right;
+margin: 0 2px 0px 0;
+overflow: hidden;
+}
+
+.boxitem h3 {
+font-family: Tahoma;
+font-size: 16px;
+font-weight: bold;
+}
+
+.boxitem img {
+width: 100px;
+height: 100px;
+float: left;
+margin: 0 0px 0 20px;
+}
+
+.aa {
+FONT-WEIGHT: normal;
+FONT-SIZE: 12px;
+COLOR: #008000;
+TEXT-DECORATION: none
+}
+
+
+/* Begin block */
+
+.widgetblock {
+/* width: 250px; */
+float: right;
+margin: 0 2px 0 0;
+padding: 0;
+}
+
+.widgetblock ul {
+list-style: none;
+margin: 0;
+padding: 3px;
+}
+
+.widgetblock ul li {
+	padding: 0 5px;
+	margin: 0;
+
+}
+
+.widgetblock ul li a{
+	padding: 0 15px;
+	margin: 0 0;
+	background: url(list.gif) no-repeat top right;
+}
+/* End block */
+
+.sectionw {
+width: 90%;
+padding: 0 50px 0 0;
+}
+
+.indexw {
+width: 95%;
+padding: 0 20px 0 0;
+}
+
+.sitew {
+width: 98%;
+padding: 0 10px 0 0;
+}
+
+.statsite {
+font-size: 10px;
+font-family: tahoma;
+color: #556C68;
+float: left;
+}
+
+.divmessage {
+font-size: 16px;
+font-weight: bold;
+font-family: Tahoma;
+color: #3C3F36;
+text-align: center;
+}
+
+.divrand {
+	padding: 5px;
+	border: 1px solid #E5F0FB; 
+	background: #F4F8FD;
+font-size: 15px;
+font-weight: bold;
+font-family: Tahoma;
+text-align: justify;
+}
+
+.pollqus {
+font-size: 12px;
+font-weight: bold;
+font-family: tahoma;
+color: #3C3F36;
+}
+
+.pollans {
+font-size: 12px;
+font-family: tahoma;
+color: #3C3F36;
+}
+
+fieldset.sec {
+/* width: 450px;
+margin: 0px 0px 0px 0;
+padding: 0 16px 0 0;
+*/
+font-size: 12px;
+font-weight: bold;
+font-family: tahoma;
+color: #0000ff;
+}
+
+.inputcode {
+vertical-align: middle;
+background: none;
+color: #3C3F36;
+font-family: Tahoma;
+font-size: 10px;
+}
+
+.highlighttext{
+background-color:#EBE9DC;
+font-weight:bold;
+}
+
+small {
+font-family: Tahoma;
+font-size: 0.9em;
+line-height: 1.5em;
+}
+
+hr {
+width: 98%;
+border: 1px solid #D2E8F7;
+padding:0px;
+margin: 5px 5px 5px 5px;
+}
+
+.commenttext {
+  margin: 10px 15px;
+  padding: 0 5px 0 45px;  
+  font: bold 14px Tahoma; 
+  color: #2361BA;
+  border: 1px solid #E5F0FB;   
+  background: #F4F8FD url(quote.jpg) no-repeat 8px 6px;
+  text-align: justify;
+}
+
+/* Begin add Styles */
+
+.addsubmit {
+    font: bold 12px Tahoma; 
+	height: 28px;
+	margin: 0;
+	padding: 2px 3px; 
+	color: #fff;
+	background: #306bc1 url(button-bg.jpg) repeat-x 0 0; 
+	border: 1px solid #306bc1;
+}
+
+.addsubmitpoll {
+    font: 11px tahoma; 
+	height: 28px;
+	margin: 0;
+	padding: 2px 3px; 
+	color: #fff;
+	background: #306bc1 url(button-bg.jpg) repeat-x 0 0; 
+	border: 1px solid #306bc1;
+    float:left;
+}
+
+.addselect {
+    font: 11px tahoma; 
+	margin: 0;
+	padding: 2px 3px; 
+	color: #306bc1;
+}
+
+.addinput {
+    font: 11px tahoma; 
+    border: 1px solid #E5F0FB; 
+	color:#777;
+	padding: 2px 3px;
+}
+
+.addtext {
+    font: 11px tahoma; 
+    border: 0px solid #E5F0FB; 
+	color:#777;
+	padding: 2px 3px; 
+}
+
+a img {
+border: none;
+}
+
+.agree{
+border:thin inset;
+height:175px;
+overflow:auto;
+padding:6px;
+border:1px solid #e7e7e7; 
+background: #ffffff;
+}
